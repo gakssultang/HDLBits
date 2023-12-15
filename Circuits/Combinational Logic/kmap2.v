@@ -8,9 +8,10 @@ module top_module(
 
 	/* 0s are less then 1s, so I just grouped 0s and inverted them. */
     assign out = ~( (a&b&!c) | (b&!c&d) | (!a&!b&c&d) | (a&c&!d) );
-    /* you can try this */
+    
+    /* when grouping 1s */
     /*
     assign out = (!a&!d) | (!b&!c) | (b&c&d) | (a&c&d);
     */
-    
+
 endmodule
