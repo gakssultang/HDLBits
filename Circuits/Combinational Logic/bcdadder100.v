@@ -10,6 +10,7 @@ module top_module(
     wire [3:0] sum_slice [99:0];
     wire cout_internal [99:0];
 
+    /* 1. slice input a, b by 4 bits */
     genvar i;
     generate
         for (i = 0; i < 100; i = i + 1) begin : gen_inst1
@@ -18,6 +19,7 @@ module top_module(
         end
     endgenerate
 
+    /* 2. make 100 instances. */
     generate
         for (i = 0; i < 100; i = i + 1) begin : gen_inst2
             bcd_fadd bcd_fadd_inst (
@@ -29,9 +31,9 @@ module top_module(
             );
         end
     endgenerate
-
     assign cout = cout_internal[99];
 
+    /* 3. concatenate sum_slice */
     generate
         for (i = 0; i < 100; i = i + 1) begin : gen_inst3
             assign sum[i*4 +: 4] = sum_slice[i];
