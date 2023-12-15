@@ -1,6 +1,5 @@
-/* I don't sure with this solution */
-
 /* Solution 1, detect overflow with carry-out bits */
+/* I don't sure with this solution */
 
 module top_module (
     input [7:0] a,
