@@ -6,3 +6,12 @@ module top_module(
     assign cout = a&cin | b&cin | a&b;
 
 endmodule
+
+/*
+module FullAdder(
+    input a, b, cin,
+    output sum, cout
+);
+    assign {cout, sum} = a + b + cin;
+endmodule
+*/
