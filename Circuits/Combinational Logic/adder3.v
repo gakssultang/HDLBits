@@ -4,6 +4,8 @@ module full_adder(
 
     assign sum = a ^ b ^ cin;
     assign cout = a&cin | b&cin | a&b;
+    
+    //assign {cout, sum} = a + b + cin;
 
 endmodule
 
