@@ -39,4 +39,5 @@ module top_module(
             assign sum[i*4 +: 4] = sum_slice[i];
         end
     endgenerate
+    
 endmodule
